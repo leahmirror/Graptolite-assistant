@@ -1,0 +1,4 @@
+include ':filedialog'
+include ':app'
+rootProject.name = "My Application"
+include ':openCVLibrary343'

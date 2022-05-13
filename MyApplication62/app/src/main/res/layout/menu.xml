@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
+<!--    <item android:name="android:actionOverflowButtonStyle">@drawable/lala</item>-->
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/lala"
+        android:orderInCategory="8"
+        android:title="笔石科普"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_kepu"
+        android:icon="@drawable/lala"
+        android:title="带笔石特征"
+        android:orderInCategory="9"
+        app:showAsAction="never" />
+</menu>

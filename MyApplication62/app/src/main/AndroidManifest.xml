@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.myapplication">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <application
+        android:requestLegacyExternalStorage="true"
+        android:allowBackup="true"
+        android:icon="@drawable/ok"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ok"
+        android:supportsRtl="true"
+        android:theme="@style/AppCompatTheme"
+        android:logo="@drawable/ok"
+        >
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MeituActivity"/>
+        <activity android:name=".BaikedetailActivity"/>
+        <activity android:name=".PredictActivity"/>
+        <activity android:name=".ImageCutActivity" />
+        <activity android:name=".baikeActivity" />
+        <activity
+            android:name=".MenuActivity"
+            >
+        </activity>
+        <provider
+            android:authorities="com.example.myapplication.fileprovider"
+            android:name="androidx.core.content.FileProvider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+    </application>
+
+</manifest>

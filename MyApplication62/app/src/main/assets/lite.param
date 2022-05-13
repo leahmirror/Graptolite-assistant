@@ -1,0 +1,590 @@
+7767517
+588 711
+Input            input                    0 1 input
+Convolution      Conv_1                   1 1 input 576 0=40 1=3 11=3 2=1 12=1 3=2 13=2 4=0 14=0 15=1 16=1 5=0 6=1080
+BatchNorm        BatchNormalization_2     1 1 576 577 0=40
+Split            splitncnn_0              1 2 577 577_splitncnn_0 577_splitncnn_1
+Sigmoid          Sigmoid_3                1 1 577_splitncnn_1 578
+BinaryOp         Mul_4                    2 1 577_splitncnn_0 578 579 0=2
+ConvolutionDepthWise Conv_6                   1 1 579 581 0=40 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=0 6=360 7=40
+BatchNorm        BatchNormalization_7     1 1 581 582 0=40
+Split            splitncnn_1              1 2 582 582_splitncnn_0 582_splitncnn_1
+Sigmoid          Sigmoid_8                1 1 582_splitncnn_1 583
+BinaryOp         Mul_9                    2 1 582_splitncnn_0 583 584 0=2
+Split            splitncnn_2              1 2 584 584_splitncnn_0 584_splitncnn_1
+Pooling          GlobalAveragePool_10     1 1 584_splitncnn_1 585 0=1 4=1
+Convolution      Conv_11                  1 1 585 586 0=10 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=400
+Split            splitncnn_3              1 2 586 586_splitncnn_0 586_splitncnn_1
+Sigmoid          Sigmoid_12               1 1 586_splitncnn_1 587
+BinaryOp         Mul_13                   2 1 586_splitncnn_0 587 588 0=2
+Convolution      Conv_14                  1 1 588 589 0=40 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=400
+Sigmoid          Sigmoid_15               1 1 589 590
+BinaryOp         Mul_16                   2 1 590 584_splitncnn_0 591 0=2
+Convolution      Conv_17                  1 1 591 592 0=24 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=960
+BatchNorm        BatchNormalization_18    1 1 592 593 0=24
+Split            splitncnn_4              1 2 593 593_splitncnn_0 593_splitncnn_1
+ConvolutionDepthWise Conv_20                  1 1 593_splitncnn_1 595 0=24 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=0 6=216 7=24
+BatchNorm        BatchNormalization_21    1 1 595 596 0=24
+Split            splitncnn_5              1 2 596 596_splitncnn_0 596_splitncnn_1
+Sigmoid          Sigmoid_22               1 1 596_splitncnn_1 597
+BinaryOp         Mul_23                   2 1 596_splitncnn_0 597 598 0=2
+Split            splitncnn_6              1 2 598 598_splitncnn_0 598_splitncnn_1
+Pooling          GlobalAveragePool_24     1 1 598_splitncnn_1 599 0=1 4=1
+Convolution      Conv_25                  1 1 599 600 0=6 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=144
+Split            splitncnn_7              1 2 600 600_splitncnn_0 600_splitncnn_1
+Sigmoid          Sigmoid_26               1 1 600_splitncnn_1 601
+BinaryOp         Mul_27                   2 1 600_splitncnn_0 601 602 0=2
+Convolution      Conv_28                  1 1 602 603 0=24 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=144
+Sigmoid          Sigmoid_29               1 1 603 604
+BinaryOp         Mul_30                   2 1 604 598_splitncnn_0 605 0=2
+Convolution      Conv_31                  1 1 605 606 0=24 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=576
+BatchNorm        BatchNormalization_32    1 1 606 607 0=24
+BinaryOp         Add_33                   2 1 607 593_splitncnn_0 608 0=0
+Convolution      Conv_34                  1 1 608 609 0=144 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=3456
+BatchNorm        BatchNormalization_35    1 1 609 610 0=144
+Split            splitncnn_8              1 2 610 610_splitncnn_0 610_splitncnn_1
+Sigmoid          Sigmoid_36               1 1 610_splitncnn_1 611
+BinaryOp         Mul_37                   2 1 610_splitncnn_0 611 612 0=2
+ConvolutionDepthWise Conv_39                  1 1 612 614 0=144 1=3 11=3 2=1 12=1 3=2 13=2 4=0 14=0 15=1 16=1 5=0 6=1296 7=144
+BatchNorm        BatchNormalization_40    1 1 614 615 0=144
+Split            splitncnn_9              1 2 615 615_splitncnn_0 615_splitncnn_1
+Sigmoid          Sigmoid_41               1 1 615_splitncnn_1 616
+BinaryOp         Mul_42                   2 1 615_splitncnn_0 616 617 0=2
+Split            splitncnn_10             1 2 617 617_splitncnn_0 617_splitncnn_1
+Pooling          GlobalAveragePool_43     1 1 617_splitncnn_1 618 0=1 4=1
+Convolution      Conv_44                  1 1 618 619 0=6 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=864
+Split            splitncnn_11             1 2 619 619_splitncnn_0 619_splitncnn_1
+Sigmoid          Sigmoid_45               1 1 619_splitncnn_1 620
+BinaryOp         Mul_46                   2 1 619_splitncnn_0 620 621 0=2
+Convolution      Conv_47                  1 1 621 622 0=144 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=864
+Sigmoid          Sigmoid_48               1 1 622 623
+BinaryOp         Mul_49                   2 1 623 617_splitncnn_0 624 0=2
+Convolution      Conv_50                  1 1 624 625 0=32 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=4608
+BatchNorm        BatchNormalization_51    1 1 625 626 0=32
+Split            splitncnn_12             1 2 626 626_splitncnn_0 626_splitncnn_1
+Convolution      Conv_52                  1 1 626_splitncnn_1 627 0=192 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=6144
+BatchNorm        BatchNormalization_53    1 1 627 628 0=192
+Split            splitncnn_13             1 2 628 628_splitncnn_0 628_splitncnn_1
+Sigmoid          Sigmoid_54               1 1 628_splitncnn_1 629
+BinaryOp         Mul_55                   2 1 628_splitncnn_0 629 630 0=2
+ConvolutionDepthWise Conv_57                  1 1 630 632 0=192 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=0 6=1728 7=192
+BatchNorm        BatchNormalization_58    1 1 632 633 0=192
+Split            splitncnn_14             1 2 633 633_splitncnn_0 633_splitncnn_1
+Sigmoid          Sigmoid_59               1 1 633_splitncnn_1 634
+BinaryOp         Mul_60                   2 1 633_splitncnn_0 634 635 0=2
+Split            splitncnn_15             1 2 635 635_splitncnn_0 635_splitncnn_1
+Pooling          GlobalAveragePool_61     1 1 635_splitncnn_1 636 0=1 4=1
+Convolution      Conv_62                  1 1 636 637 0=8 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=1536
+Split            splitncnn_16             1 2 637 637_splitncnn_0 637_splitncnn_1
+Sigmoid          Sigmoid_63               1 1 637_splitncnn_1 638
+BinaryOp         Mul_64                   2 1 637_splitncnn_0 638 639 0=2
+Convolution      Conv_65                  1 1 639 640 0=192 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=1536
+Sigmoid          Sigmoid_66               1 1 640 641
+BinaryOp         Mul_67                   2 1 641 635_splitncnn_0 642 0=2
+Convolution      Conv_68                  1 1 642 643 0=32 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=6144
+BatchNorm        BatchNormalization_69    1 1 643 644 0=32
+BinaryOp         Add_70                   2 1 644 626_splitncnn_0 645 0=0
+Split            splitncnn_17             1 2 645 645_splitncnn_0 645_splitncnn_1
+Convolution      Conv_71                  1 1 645_splitncnn_1 646 0=192 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=6144
+BatchNorm        BatchNormalization_72    1 1 646 647 0=192
+Split            splitncnn_18             1 2 647 647_splitncnn_0 647_splitncnn_1
+Sigmoid          Sigmoid_73               1 1 647_splitncnn_1 648
+BinaryOp         Mul_74                   2 1 647_splitncnn_0 648 649 0=2
+ConvolutionDepthWise Conv_76                  1 1 649 651 0=192 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=0 6=1728 7=192
+BatchNorm        BatchNormalization_77    1 1 651 652 0=192
+Split            splitncnn_19             1 2 652 652_splitncnn_0 652_splitncnn_1
+Sigmoid          Sigmoid_78               1 1 652_splitncnn_1 653
+BinaryOp         Mul_79                   2 1 652_splitncnn_0 653 654 0=2
+Split            splitncnn_20             1 2 654 654_splitncnn_0 654_splitncnn_1
+Pooling          GlobalAveragePool_80     1 1 654_splitncnn_1 655 0=1 4=1
+Convolution      Conv_81                  1 1 655 656 0=8 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=1536
+Split            splitncnn_21             1 2 656 656_splitncnn_0 656_splitncnn_1
+Sigmoid          Sigmoid_82               1 1 656_splitncnn_1 657
+BinaryOp         Mul_83                   2 1 656_splitncnn_0 657 658 0=2
+Convolution      Conv_84                  1 1 658 659 0=192 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=1536
+Sigmoid          Sigmoid_85               1 1 659 660
+BinaryOp         Mul_86                   2 1 660 654_splitncnn_0 661 0=2
+Convolution      Conv_87                  1 1 661 662 0=32 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=6144
+BatchNorm        BatchNormalization_88    1 1 662 663 0=32
+BinaryOp         Add_89                   2 1 663 645_splitncnn_0 664 0=0
+Convolution      Conv_90                  1 1 664 665 0=192 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=6144
+BatchNorm        BatchNormalization_91    1 1 665 666 0=192
+Split            splitncnn_22             1 2 666 666_splitncnn_0 666_splitncnn_1
+Sigmoid          Sigmoid_92               1 1 666_splitncnn_1 667
+BinaryOp         Mul_93                   2 1 666_splitncnn_0 667 668 0=2
+ConvolutionDepthWise Conv_95                  1 1 668 670 0=192 1=5 11=5 2=1 12=1 3=2 13=2 4=2 14=2 15=2 16=2 5=0 6=4800 7=192
+BatchNorm        BatchNormalization_96    1 1 670 671 0=192
+Split            splitncnn_23             1 2 671 671_splitncnn_0 671_splitncnn_1
+Sigmoid          Sigmoid_97               1 1 671_splitncnn_1 672
+BinaryOp         Mul_98                   2 1 671_splitncnn_0 672 673 0=2
+Split            splitncnn_24             1 2 673 673_splitncnn_0 673_splitncnn_1
+Pooling          GlobalAveragePool_99     1 1 673_splitncnn_1 674 0=1 4=1
+Convolution      Conv_100                 1 1 674 675 0=8 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=1536
+Split            splitncnn_25             1 2 675 675_splitncnn_0 675_splitncnn_1
+Sigmoid          Sigmoid_101              1 1 675_splitncnn_1 676
+BinaryOp         Mul_102                  2 1 675_splitncnn_0 676 677 0=2
+Convolution      Conv_103                 1 1 677 678 0=192 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=1536
+Sigmoid          Sigmoid_104              1 1 678 679
+BinaryOp         Mul_105                  2 1 679 673_splitncnn_0 680 0=2
+Convolution      Conv_106                 1 1 680 681 0=48 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=9216
+BatchNorm        BatchNormalization_107   1 1 681 682 0=48
+Split            splitncnn_26             1 2 682 682_splitncnn_0 682_splitncnn_1
+Convolution      Conv_108                 1 1 682_splitncnn_1 683 0=288 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=13824
+BatchNorm        BatchNormalization_109   1 1 683 684 0=288
+Split            splitncnn_27             1 2 684 684_splitncnn_0 684_splitncnn_1
+Sigmoid          Sigmoid_110              1 1 684_splitncnn_1 685
+BinaryOp         Mul_111                  2 1 684_splitncnn_0 685 686 0=2
+ConvolutionDepthWise Conv_113                 1 1 686 688 0=288 1=5 11=5 2=1 12=1 3=1 13=1 4=2 14=2 15=2 16=2 5=0 6=7200 7=288
+BatchNorm        BatchNormalization_114   1 1 688 689 0=288
+Split            splitncnn_28             1 2 689 689_splitncnn_0 689_splitncnn_1
+Sigmoid          Sigmoid_115              1 1 689_splitncnn_1 690
+BinaryOp         Mul_116                  2 1 689_splitncnn_0 690 691 0=2
+Split            splitncnn_29             1 2 691 691_splitncnn_0 691_splitncnn_1
+Pooling          GlobalAveragePool_117    1 1 691_splitncnn_1 692 0=1 4=1
+Convolution      Conv_118                 1 1 692 693 0=12 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=3456
+Split            splitncnn_30             1 2 693 693_splitncnn_0 693_splitncnn_1
+Sigmoid          Sigmoid_119              1 1 693_splitncnn_1 694
+BinaryOp         Mul_120                  2 1 693_splitncnn_0 694 695 0=2
+Convolution      Conv_121                 1 1 695 696 0=288 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=3456
+Sigmoid          Sigmoid_122              1 1 696 697
+BinaryOp         Mul_123                  2 1 697 691_splitncnn_0 698 0=2
+Convolution      Conv_124                 1 1 698 699 0=48 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=13824
+BatchNorm        BatchNormalization_125   1 1 699 700 0=48
+BinaryOp         Add_126                  2 1 700 682_splitncnn_0 701 0=0
+Split            splitncnn_31             1 2 701 701_splitncnn_0 701_splitncnn_1
+Convolution      Conv_127                 1 1 701_splitncnn_1 702 0=288 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=13824
+BatchNorm        BatchNormalization_128   1 1 702 703 0=288
+Split            splitncnn_32             1 2 703 703_splitncnn_0 703_splitncnn_1
+Sigmoid          Sigmoid_129              1 1 703_splitncnn_1 704
+BinaryOp         Mul_130                  2 1 703_splitncnn_0 704 705 0=2
+ConvolutionDepthWise Conv_132                 1 1 705 707 0=288 1=5 11=5 2=1 12=1 3=1 13=1 4=2 14=2 15=2 16=2 5=0 6=7200 7=288
+BatchNorm        BatchNormalization_133   1 1 707 708 0=288
+Split            splitncnn_33             1 2 708 708_splitncnn_0 708_splitncnn_1
+Sigmoid          Sigmoid_134              1 1 708_splitncnn_1 709
+BinaryOp         Mul_135                  2 1 708_splitncnn_0 709 710 0=2
+Split            splitncnn_34             1 2 710 710_splitncnn_0 710_splitncnn_1
+Pooling          GlobalAveragePool_136    1 1 710_splitncnn_1 711 0=1 4=1
+Convolution      Conv_137                 1 1 711 712 0=12 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=3456
+Split            splitncnn_35             1 2 712 712_splitncnn_0 712_splitncnn_1
+Sigmoid          Sigmoid_138              1 1 712_splitncnn_1 713
+BinaryOp         Mul_139                  2 1 712_splitncnn_0 713 714 0=2
+Convolution      Conv_140                 1 1 714 715 0=288 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=3456
+Sigmoid          Sigmoid_141              1 1 715 716
+BinaryOp         Mul_142                  2 1 716 710_splitncnn_0 717 0=2
+Convolution      Conv_143                 1 1 717 718 0=48 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=13824
+BatchNorm        BatchNormalization_144   1 1 718 719 0=48
+BinaryOp         Add_145                  2 1 719 701_splitncnn_0 720 0=0
+Convolution      Conv_146                 1 1 720 721 0=288 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=13824
+BatchNorm        BatchNormalization_147   1 1 721 722 0=288
+Split            splitncnn_36             1 2 722 722_splitncnn_0 722_splitncnn_1
+Sigmoid          Sigmoid_148              1 1 722_splitncnn_1 723
+BinaryOp         Mul_149                  2 1 722_splitncnn_0 723 724 0=2
+ConvolutionDepthWise Conv_151                 1 1 724 726 0=288 1=3 11=3 2=1 12=1 3=2 13=2 4=0 14=0 15=1 16=1 5=0 6=2592 7=288
+BatchNorm        BatchNormalization_152   1 1 726 727 0=288
+Split            splitncnn_37             1 2 727 727_splitncnn_0 727_splitncnn_1
+Sigmoid          Sigmoid_153              1 1 727_splitncnn_1 728
+BinaryOp         Mul_154                  2 1 727_splitncnn_0 728 729 0=2
+Split            splitncnn_38             1 2 729 729_splitncnn_0 729_splitncnn_1
+Pooling          GlobalAveragePool_155    1 1 729_splitncnn_1 730 0=1 4=1
+Convolution      Conv_156                 1 1 730 731 0=12 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=3456
+Split            splitncnn_39             1 2 731 731_splitncnn_0 731_splitncnn_1
+Sigmoid          Sigmoid_157              1 1 731_splitncnn_1 732
+BinaryOp         Mul_158                  2 1 731_splitncnn_0 732 733 0=2
+Convolution      Conv_159                 1 1 733 734 0=288 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=3456
+Sigmoid          Sigmoid_160              1 1 734 735
+BinaryOp         Mul_161                  2 1 735 729_splitncnn_0 736 0=2
+Convolution      Conv_162                 1 1 736 737 0=96 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=27648
+BatchNorm        BatchNormalization_163   1 1 737 738 0=96
+Split            splitncnn_40             1 2 738 738_splitncnn_0 738_splitncnn_1
+Convolution      Conv_164                 1 1 738_splitncnn_1 739 0=576 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=55296
+BatchNorm        BatchNormalization_165   1 1 739 740 0=576
+Split            splitncnn_41             1 2 740 740_splitncnn_0 740_splitncnn_1
+Sigmoid          Sigmoid_166              1 1 740_splitncnn_1 741
+BinaryOp         Mul_167                  2 1 740_splitncnn_0 741 742 0=2
+ConvolutionDepthWise Conv_169                 1 1 742 744 0=576 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=0 6=5184 7=576
+BatchNorm        BatchNormalization_170   1 1 744 745 0=576
+Split            splitncnn_42             1 2 745 745_splitncnn_0 745_splitncnn_1
+Sigmoid          Sigmoid_171              1 1 745_splitncnn_1 746
+BinaryOp         Mul_172                  2 1 745_splitncnn_0 746 747 0=2
+Split            splitncnn_43             1 2 747 747_splitncnn_0 747_splitncnn_1
+Pooling          GlobalAveragePool_173    1 1 747_splitncnn_1 748 0=1 4=1
+Convolution      Conv_174                 1 1 748 749 0=24 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=13824
+Split            splitncnn_44             1 2 749 749_splitncnn_0 749_splitncnn_1
+Sigmoid          Sigmoid_175              1 1 749_splitncnn_1 750
+BinaryOp         Mul_176                  2 1 749_splitncnn_0 750 751 0=2
+Convolution      Conv_177                 1 1 751 752 0=576 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=13824
+Sigmoid          Sigmoid_178              1 1 752 753
+BinaryOp         Mul_179                  2 1 753 747_splitncnn_0 754 0=2
+Convolution      Conv_180                 1 1 754 755 0=96 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=55296
+BatchNorm        BatchNormalization_181   1 1 755 756 0=96
+BinaryOp         Add_182                  2 1 756 738_splitncnn_0 757 0=0
+Split            splitncnn_45             1 2 757 757_splitncnn_0 757_splitncnn_1
+Convolution      Conv_183                 1 1 757_splitncnn_1 758 0=576 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=55296
+BatchNorm        BatchNormalization_184   1 1 758 759 0=576
+Split            splitncnn_46             1 2 759 759_splitncnn_0 759_splitncnn_1
+Sigmoid          Sigmoid_185              1 1 759_splitncnn_1 760
+BinaryOp         Mul_186                  2 1 759_splitncnn_0 760 761 0=2
+ConvolutionDepthWise Conv_188                 1 1 761 763 0=576 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=0 6=5184 7=576
+BatchNorm        BatchNormalization_189   1 1 763 764 0=576
+Split            splitncnn_47             1 2 764 764_splitncnn_0 764_splitncnn_1
+Sigmoid          Sigmoid_190              1 1 764_splitncnn_1 765
+BinaryOp         Mul_191                  2 1 764_splitncnn_0 765 766 0=2
+Split            splitncnn_48             1 2 766 766_splitncnn_0 766_splitncnn_1
+Pooling          GlobalAveragePool_192    1 1 766_splitncnn_1 767 0=1 4=1
+Convolution      Conv_193                 1 1 767 768 0=24 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=13824
+Split            splitncnn_49             1 2 768 768_splitncnn_0 768_splitncnn_1
+Sigmoid          Sigmoid_194              1 1 768_splitncnn_1 769
+BinaryOp         Mul_195                  2 1 768_splitncnn_0 769 770 0=2
+Convolution      Conv_196                 1 1 770 771 0=576 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=13824
+Sigmoid          Sigmoid_197              1 1 771 772
+BinaryOp         Mul_198                  2 1 772 766_splitncnn_0 773 0=2
+Convolution      Conv_199                 1 1 773 774 0=96 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=55296
+BatchNorm        BatchNormalization_200   1 1 774 775 0=96
+BinaryOp         Add_201                  2 1 775 757_splitncnn_0 776 0=0
+Split            splitncnn_50             1 2 776 776_splitncnn_0 776_splitncnn_1
+Convolution      Conv_202                 1 1 776_splitncnn_1 777 0=576 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=55296
+BatchNorm        BatchNormalization_203   1 1 777 778 0=576
+Split            splitncnn_51             1 2 778 778_splitncnn_0 778_splitncnn_1
+Sigmoid          Sigmoid_204              1 1 778_splitncnn_1 779
+BinaryOp         Mul_205                  2 1 778_splitncnn_0 779 780 0=2
+ConvolutionDepthWise Conv_207                 1 1 780 782 0=576 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=0 6=5184 7=576
+BatchNorm        BatchNormalization_208   1 1 782 783 0=576
+Split            splitncnn_52             1 2 783 783_splitncnn_0 783_splitncnn_1
+Sigmoid          Sigmoid_209              1 1 783_splitncnn_1 784
+BinaryOp         Mul_210                  2 1 783_splitncnn_0 784 785 0=2
+Split            splitncnn_53             1 2 785 785_splitncnn_0 785_splitncnn_1
+Pooling          GlobalAveragePool_211    1 1 785_splitncnn_1 786 0=1 4=1
+Convolution      Conv_212                 1 1 786 787 0=24 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=13824
+Split            splitncnn_54             1 2 787 787_splitncnn_0 787_splitncnn_1
+Sigmoid          Sigmoid_213              1 1 787_splitncnn_1 788
+BinaryOp         Mul_214                  2 1 787_splitncnn_0 788 789 0=2
+Convolution      Conv_215                 1 1 789 790 0=576 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=13824
+Sigmoid          Sigmoid_216              1 1 790 791
+BinaryOp         Mul_217                  2 1 791 785_splitncnn_0 792 0=2
+Convolution      Conv_218                 1 1 792 793 0=96 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=55296
+BatchNorm        BatchNormalization_219   1 1 793 794 0=96
+BinaryOp         Add_220                  2 1 794 776_splitncnn_0 795 0=0
+Split            splitncnn_55             1 2 795 795_splitncnn_0 795_splitncnn_1
+Convolution      Conv_221                 1 1 795_splitncnn_1 796 0=576 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=55296
+BatchNorm        BatchNormalization_222   1 1 796 797 0=576
+Split            splitncnn_56             1 2 797 797_splitncnn_0 797_splitncnn_1
+Sigmoid          Sigmoid_223              1 1 797_splitncnn_1 798
+BinaryOp         Mul_224                  2 1 797_splitncnn_0 798 799 0=2
+ConvolutionDepthWise Conv_226                 1 1 799 801 0=576 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=0 6=5184 7=576
+BatchNorm        BatchNormalization_227   1 1 801 802 0=576
+Split            splitncnn_57             1 2 802 802_splitncnn_0 802_splitncnn_1
+Sigmoid          Sigmoid_228              1 1 802_splitncnn_1 803
+BinaryOp         Mul_229                  2 1 802_splitncnn_0 803 804 0=2
+Split            splitncnn_58             1 2 804 804_splitncnn_0 804_splitncnn_1
+Pooling          GlobalAveragePool_230    1 1 804_splitncnn_1 805 0=1 4=1
+Convolution      Conv_231                 1 1 805 806 0=24 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=13824
+Split            splitncnn_59             1 2 806 806_splitncnn_0 806_splitncnn_1
+Sigmoid          Sigmoid_232              1 1 806_splitncnn_1 807
+BinaryOp         Mul_233                  2 1 806_splitncnn_0 807 808 0=2
+Convolution      Conv_234                 1 1 808 809 0=576 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=13824
+Sigmoid          Sigmoid_235              1 1 809 810
+BinaryOp         Mul_236                  2 1 810 804_splitncnn_0 811 0=2
+Convolution      Conv_237                 1 1 811 812 0=96 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=55296
+BatchNorm        BatchNormalization_238   1 1 812 813 0=96
+BinaryOp         Add_239                  2 1 813 795_splitncnn_0 814 0=0
+Convolution      Conv_240                 1 1 814 815 0=576 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=55296
+BatchNorm        BatchNormalization_241   1 1 815 816 0=576
+Split            splitncnn_60             1 2 816 816_splitncnn_0 816_splitncnn_1
+Sigmoid          Sigmoid_242              1 1 816_splitncnn_1 817
+BinaryOp         Mul_243                  2 1 816_splitncnn_0 817 818 0=2
+ConvolutionDepthWise Conv_245                 1 1 818 820 0=576 1=5 11=5 2=1 12=1 3=1 13=1 4=2 14=2 15=2 16=2 5=0 6=14400 7=576
+BatchNorm        BatchNormalization_246   1 1 820 821 0=576
+Split            splitncnn_61             1 2 821 821_splitncnn_0 821_splitncnn_1
+Sigmoid          Sigmoid_247              1 1 821_splitncnn_1 822
+BinaryOp         Mul_248                  2 1 821_splitncnn_0 822 823 0=2
+Split            splitncnn_62             1 2 823 823_splitncnn_0 823_splitncnn_1
+Pooling          GlobalAveragePool_249    1 1 823_splitncnn_1 824 0=1 4=1
+Convolution      Conv_250                 1 1 824 825 0=24 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=13824
+Split            splitncnn_63             1 2 825 825_splitncnn_0 825_splitncnn_1
+Sigmoid          Sigmoid_251              1 1 825_splitncnn_1 826
+BinaryOp         Mul_252                  2 1 825_splitncnn_0 826 827 0=2
+Convolution      Conv_253                 1 1 827 828 0=576 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=13824
+Sigmoid          Sigmoid_254              1 1 828 829
+BinaryOp         Mul_255                  2 1 829 823_splitncnn_0 830 0=2
+Convolution      Conv_256                 1 1 830 831 0=136 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=78336
+BatchNorm        BatchNormalization_257   1 1 831 832 0=136
+Split            splitncnn_64             1 2 832 832_splitncnn_0 832_splitncnn_1
+Convolution      Conv_258                 1 1 832_splitncnn_1 833 0=816 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=110976
+BatchNorm        BatchNormalization_259   1 1 833 834 0=816
+Split            splitncnn_65             1 2 834 834_splitncnn_0 834_splitncnn_1
+Sigmoid          Sigmoid_260              1 1 834_splitncnn_1 835
+BinaryOp         Mul_261                  2 1 834_splitncnn_0 835 836 0=2
+ConvolutionDepthWise Conv_263                 1 1 836 838 0=816 1=5 11=5 2=1 12=1 3=1 13=1 4=2 14=2 15=2 16=2 5=0 6=20400 7=816
+BatchNorm        BatchNormalization_264   1 1 838 839 0=816
+Split            splitncnn_66             1 2 839 839_splitncnn_0 839_splitncnn_1
+Sigmoid          Sigmoid_265              1 1 839_splitncnn_1 840
+BinaryOp         Mul_266                  2 1 839_splitncnn_0 840 841 0=2
+Split            splitncnn_67             1 2 841 841_splitncnn_0 841_splitncnn_1
+Pooling          GlobalAveragePool_267    1 1 841_splitncnn_1 842 0=1 4=1
+Convolution      Conv_268                 1 1 842 843 0=34 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=27744
+Split            splitncnn_68             1 2 843 843_splitncnn_0 843_splitncnn_1
+Sigmoid          Sigmoid_269              1 1 843_splitncnn_1 844
+BinaryOp         Mul_270                  2 1 843_splitncnn_0 844 845 0=2
+Convolution      Conv_271                 1 1 845 846 0=816 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=27744
+Sigmoid          Sigmoid_272              1 1 846 847
+BinaryOp         Mul_273                  2 1 847 841_splitncnn_0 848 0=2
+Convolution      Conv_274                 1 1 848 849 0=136 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=110976
+BatchNorm        BatchNormalization_275   1 1 849 850 0=136
+BinaryOp         Add_276                  2 1 850 832_splitncnn_0 851 0=0
+Split            splitncnn_69             1 2 851 851_splitncnn_0 851_splitncnn_1
+Convolution      Conv_277                 1 1 851_splitncnn_1 852 0=816 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=110976
+BatchNorm        BatchNormalization_278   1 1 852 853 0=816
+Split            splitncnn_70             1 2 853 853_splitncnn_0 853_splitncnn_1
+Sigmoid          Sigmoid_279              1 1 853_splitncnn_1 854
+BinaryOp         Mul_280                  2 1 853_splitncnn_0 854 855 0=2
+ConvolutionDepthWise Conv_282                 1 1 855 857 0=816 1=5 11=5 2=1 12=1 3=1 13=1 4=2 14=2 15=2 16=2 5=0 6=20400 7=816
+BatchNorm        BatchNormalization_283   1 1 857 858 0=816
+Split            splitncnn_71             1 2 858 858_splitncnn_0 858_splitncnn_1
+Sigmoid          Sigmoid_284              1 1 858_splitncnn_1 859
+BinaryOp         Mul_285                  2 1 858_splitncnn_0 859 860 0=2
+Split            splitncnn_72             1 2 860 860_splitncnn_0 860_splitncnn_1
+Pooling          GlobalAveragePool_286    1 1 860_splitncnn_1 861 0=1 4=1
+Convolution      Conv_287                 1 1 861 862 0=34 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=27744
+Split            splitncnn_73             1 2 862 862_splitncnn_0 862_splitncnn_1
+Sigmoid          Sigmoid_288              1 1 862_splitncnn_1 863
+BinaryOp         Mul_289                  2 1 862_splitncnn_0 863 864 0=2
+Convolution      Conv_290                 1 1 864 865 0=816 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=27744
+Sigmoid          Sigmoid_291              1 1 865 866
+BinaryOp         Mul_292                  2 1 866 860_splitncnn_0 867 0=2
+Convolution      Conv_293                 1 1 867 868 0=136 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=110976
+BatchNorm        BatchNormalization_294   1 1 868 869 0=136
+BinaryOp         Add_295                  2 1 869 851_splitncnn_0 870 0=0
+Split            splitncnn_74             1 2 870 870_splitncnn_0 870_splitncnn_1
+Convolution      Conv_296                 1 1 870_splitncnn_1 871 0=816 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=110976
+BatchNorm        BatchNormalization_297   1 1 871 872 0=816
+Split            splitncnn_75             1 2 872 872_splitncnn_0 872_splitncnn_1
+Sigmoid          Sigmoid_298              1 1 872_splitncnn_1 873
+BinaryOp         Mul_299                  2 1 872_splitncnn_0 873 874 0=2
+ConvolutionDepthWise Conv_301                 1 1 874 876 0=816 1=5 11=5 2=1 12=1 3=1 13=1 4=2 14=2 15=2 16=2 5=0 6=20400 7=816
+BatchNorm        BatchNormalization_302   1 1 876 877 0=816
+Split            splitncnn_76             1 2 877 877_splitncnn_0 877_splitncnn_1
+Sigmoid          Sigmoid_303              1 1 877_splitncnn_1 878
+BinaryOp         Mul_304                  2 1 877_splitncnn_0 878 879 0=2
+Split            splitncnn_77             1 2 879 879_splitncnn_0 879_splitncnn_1
+Pooling          GlobalAveragePool_305    1 1 879_splitncnn_1 880 0=1 4=1
+Convolution      Conv_306                 1 1 880 881 0=34 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=27744
+Split            splitncnn_78             1 2 881 881_splitncnn_0 881_splitncnn_1
+Sigmoid          Sigmoid_307              1 1 881_splitncnn_1 882
+BinaryOp         Mul_308                  2 1 881_splitncnn_0 882 883 0=2
+Convolution      Conv_309                 1 1 883 884 0=816 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=27744
+Sigmoid          Sigmoid_310              1 1 884 885
+BinaryOp         Mul_311                  2 1 885 879_splitncnn_0 886 0=2
+Convolution      Conv_312                 1 1 886 887 0=136 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=110976
+BatchNorm        BatchNormalization_313   1 1 887 888 0=136
+BinaryOp         Add_314                  2 1 888 870_splitncnn_0 889 0=0
+Split            splitncnn_79             1 2 889 889_splitncnn_0 889_splitncnn_1
+Convolution      Conv_315                 1 1 889_splitncnn_1 890 0=816 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=110976
+BatchNorm        BatchNormalization_316   1 1 890 891 0=816
+Split            splitncnn_80             1 2 891 891_splitncnn_0 891_splitncnn_1
+Sigmoid          Sigmoid_317              1 1 891_splitncnn_1 892
+BinaryOp         Mul_318                  2 1 891_splitncnn_0 892 893 0=2
+ConvolutionDepthWise Conv_320                 1 1 893 895 0=816 1=5 11=5 2=1 12=1 3=1 13=1 4=2 14=2 15=2 16=2 5=0 6=20400 7=816
+BatchNorm        BatchNormalization_321   1 1 895 896 0=816
+Split            splitncnn_81             1 2 896 896_splitncnn_0 896_splitncnn_1
+Sigmoid          Sigmoid_322              1 1 896_splitncnn_1 897
+BinaryOp         Mul_323                  2 1 896_splitncnn_0 897 898 0=2
+Split            splitncnn_82             1 2 898 898_splitncnn_0 898_splitncnn_1
+Pooling          GlobalAveragePool_324    1 1 898_splitncnn_1 899 0=1 4=1
+Convolution      Conv_325                 1 1 899 900 0=34 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=27744
+Split            splitncnn_83             1 2 900 900_splitncnn_0 900_splitncnn_1
+Sigmoid          Sigmoid_326              1 1 900_splitncnn_1 901
+BinaryOp         Mul_327                  2 1 900_splitncnn_0 901 902 0=2
+Convolution      Conv_328                 1 1 902 903 0=816 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=27744
+Sigmoid          Sigmoid_329              1 1 903 904
+BinaryOp         Mul_330                  2 1 904 898_splitncnn_0 905 0=2
+Convolution      Conv_331                 1 1 905 906 0=136 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=110976
+BatchNorm        BatchNormalization_332   1 1 906 907 0=136
+BinaryOp         Add_333                  2 1 907 889_splitncnn_0 908 0=0
+Convolution      Conv_334                 1 1 908 909 0=816 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=110976
+BatchNorm        BatchNormalization_335   1 1 909 910 0=816
+Split            splitncnn_84             1 2 910 910_splitncnn_0 910_splitncnn_1
+Sigmoid          Sigmoid_336              1 1 910_splitncnn_1 911
+BinaryOp         Mul_337                  2 1 910_splitncnn_0 911 912 0=2
+ConvolutionDepthWise Conv_339                 1 1 912 914 0=816 1=5 11=5 2=1 12=1 3=2 13=2 4=2 14=2 15=2 16=2 5=0 6=20400 7=816
+BatchNorm        BatchNormalization_340   1 1 914 915 0=816
+Split            splitncnn_85             1 2 915 915_splitncnn_0 915_splitncnn_1
+Sigmoid          Sigmoid_341              1 1 915_splitncnn_1 916
+BinaryOp         Mul_342                  2 1 915_splitncnn_0 916 917 0=2
+Split            splitncnn_86             1 2 917 917_splitncnn_0 917_splitncnn_1
+Pooling          GlobalAveragePool_343    1 1 917_splitncnn_1 918 0=1 4=1
+Convolution      Conv_344                 1 1 918 919 0=34 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=27744
+Split            splitncnn_87             1 2 919 919_splitncnn_0 919_splitncnn_1
+Sigmoid          Sigmoid_345              1 1 919_splitncnn_1 920
+BinaryOp         Mul_346                  2 1 919_splitncnn_0 920 921 0=2
+Convolution      Conv_347                 1 1 921 922 0=816 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=27744
+Sigmoid          Sigmoid_348              1 1 922 923
+BinaryOp         Mul_349                  2 1 923 917_splitncnn_0 924 0=2
+Convolution      Conv_350                 1 1 924 925 0=232 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=189312
+BatchNorm        BatchNormalization_351   1 1 925 926 0=232
+Split            splitncnn_88             1 2 926 926_splitncnn_0 926_splitncnn_1
+Convolution      Conv_352                 1 1 926_splitncnn_1 927 0=1392 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=322944
+BatchNorm        BatchNormalization_353   1 1 927 928 0=1392
+Split            splitncnn_89             1 2 928 928_splitncnn_0 928_splitncnn_1
+Sigmoid          Sigmoid_354              1 1 928_splitncnn_1 929
+BinaryOp         Mul_355                  2 1 928_splitncnn_0 929 930 0=2
+ConvolutionDepthWise Conv_357                 1 1 930 932 0=1392 1=5 11=5 2=1 12=1 3=1 13=1 4=2 14=2 15=2 16=2 5=0 6=34800 7=1392
+BatchNorm        BatchNormalization_358   1 1 932 933 0=1392
+Split            splitncnn_90             1 2 933 933_splitncnn_0 933_splitncnn_1
+Sigmoid          Sigmoid_359              1 1 933_splitncnn_1 934
+BinaryOp         Mul_360                  2 1 933_splitncnn_0 934 935 0=2
+Split            splitncnn_91             1 2 935 935_splitncnn_0 935_splitncnn_1
+Pooling          GlobalAveragePool_361    1 1 935_splitncnn_1 936 0=1 4=1
+Convolution      Conv_362                 1 1 936 937 0=58 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=80736
+Split            splitncnn_92             1 2 937 937_splitncnn_0 937_splitncnn_1
+Sigmoid          Sigmoid_363              1 1 937_splitncnn_1 938
+BinaryOp         Mul_364                  2 1 937_splitncnn_0 938 939 0=2
+Convolution      Conv_365                 1 1 939 940 0=1392 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=80736
+Sigmoid          Sigmoid_366              1 1 940 941
+BinaryOp         Mul_367                  2 1 941 935_splitncnn_0 942 0=2
+Convolution      Conv_368                 1 1 942 943 0=232 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=322944
+BatchNorm        BatchNormalization_369   1 1 943 944 0=232
+BinaryOp         Add_370                  2 1 944 926_splitncnn_0 945 0=0
+Split            splitncnn_93             1 2 945 945_splitncnn_0 945_splitncnn_1
+Convolution      Conv_371                 1 1 945_splitncnn_1 946 0=1392 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=322944
+BatchNorm        BatchNormalization_372   1 1 946 947 0=1392
+Split            splitncnn_94             1 2 947 947_splitncnn_0 947_splitncnn_1
+Sigmoid          Sigmoid_373              1 1 947_splitncnn_1 948
+BinaryOp         Mul_374                  2 1 947_splitncnn_0 948 949 0=2
+ConvolutionDepthWise Conv_376                 1 1 949 951 0=1392 1=5 11=5 2=1 12=1 3=1 13=1 4=2 14=2 15=2 16=2 5=0 6=34800 7=1392
+BatchNorm        BatchNormalization_377   1 1 951 952 0=1392
+Split            splitncnn_95             1 2 952 952_splitncnn_0 952_splitncnn_1
+Sigmoid          Sigmoid_378              1 1 952_splitncnn_1 953
+BinaryOp         Mul_379                  2 1 952_splitncnn_0 953 954 0=2
+Split            splitncnn_96             1 2 954 954_splitncnn_0 954_splitncnn_1
+Pooling          GlobalAveragePool_380    1 1 954_splitncnn_1 955 0=1 4=1
+Convolution      Conv_381                 1 1 955 956 0=58 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=80736
+Split            splitncnn_97             1 2 956 956_splitncnn_0 956_splitncnn_1
+Sigmoid          Sigmoid_382              1 1 956_splitncnn_1 957
+BinaryOp         Mul_383                  2 1 956_splitncnn_0 957 958 0=2
+Convolution      Conv_384                 1 1 958 959 0=1392 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=80736
+Sigmoid          Sigmoid_385              1 1 959 960
+BinaryOp         Mul_386                  2 1 960 954_splitncnn_0 961 0=2
+Convolution      Conv_387                 1 1 961 962 0=232 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=322944
+BatchNorm        BatchNormalization_388   1 1 962 963 0=232
+BinaryOp         Add_389                  2 1 963 945_splitncnn_0 964 0=0
+Split            splitncnn_98             1 2 964 964_splitncnn_0 964_splitncnn_1
+Convolution      Conv_390                 1 1 964_splitncnn_1 965 0=1392 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=322944
+BatchNorm        BatchNormalization_391   1 1 965 966 0=1392
+Split            splitncnn_99             1 2 966 966_splitncnn_0 966_splitncnn_1
+Sigmoid          Sigmoid_392              1 1 966_splitncnn_1 967
+BinaryOp         Mul_393                  2 1 966_splitncnn_0 967 968 0=2
+ConvolutionDepthWise Conv_395                 1 1 968 970 0=1392 1=5 11=5 2=1 12=1 3=1 13=1 4=2 14=2 15=2 16=2 5=0 6=34800 7=1392
+BatchNorm        BatchNormalization_396   1 1 970 971 0=1392
+Split            splitncnn_100            1 2 971 971_splitncnn_0 971_splitncnn_1
+Sigmoid          Sigmoid_397              1 1 971_splitncnn_1 972
+BinaryOp         Mul_398                  2 1 971_splitncnn_0 972 973 0=2
+Split            splitncnn_101            1 2 973 973_splitncnn_0 973_splitncnn_1
+Pooling          GlobalAveragePool_399    1 1 973_splitncnn_1 974 0=1 4=1
+Convolution      Conv_400                 1 1 974 975 0=58 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=80736
+Split            splitncnn_102            1 2 975 975_splitncnn_0 975_splitncnn_1
+Sigmoid          Sigmoid_401              1 1 975_splitncnn_1 976
+BinaryOp         Mul_402                  2 1 975_splitncnn_0 976 977 0=2
+Convolution      Conv_403                 1 1 977 978 0=1392 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=80736
+Sigmoid          Sigmoid_404              1 1 978 979
+BinaryOp         Mul_405                  2 1 979 973_splitncnn_0 980 0=2
+Convolution      Conv_406                 1 1 980 981 0=232 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=322944
+BatchNorm        BatchNormalization_407   1 1 981 982 0=232
+BinaryOp         Add_408                  2 1 982 964_splitncnn_0 983 0=0
+Split            splitncnn_103            1 2 983 983_splitncnn_0 983_splitncnn_1
+Convolution      Conv_409                 1 1 983_splitncnn_1 984 0=1392 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=322944
+BatchNorm        BatchNormalization_410   1 1 984 985 0=1392
+Split            splitncnn_104            1 2 985 985_splitncnn_0 985_splitncnn_1
+Sigmoid          Sigmoid_411              1 1 985_splitncnn_1 986
+BinaryOp         Mul_412                  2 1 985_splitncnn_0 986 987 0=2
+ConvolutionDepthWise Conv_414                 1 1 987 989 0=1392 1=5 11=5 2=1 12=1 3=1 13=1 4=2 14=2 15=2 16=2 5=0 6=34800 7=1392
+BatchNorm        BatchNormalization_415   1 1 989 990 0=1392
+Split            splitncnn_105            1 2 990 990_splitncnn_0 990_splitncnn_1
+Sigmoid          Sigmoid_416              1 1 990_splitncnn_1 991
+BinaryOp         Mul_417                  2 1 990_splitncnn_0 991 992 0=2
+Split            splitncnn_106            1 2 992 992_splitncnn_0 992_splitncnn_1
+Pooling          GlobalAveragePool_418    1 1 992_splitncnn_1 993 0=1 4=1
+Convolution      Conv_419                 1 1 993 994 0=58 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=80736
+Split            splitncnn_107            1 2 994 994_splitncnn_0 994_splitncnn_1
+Sigmoid          Sigmoid_420              1 1 994_splitncnn_1 995
+BinaryOp         Mul_421                  2 1 994_splitncnn_0 995 996 0=2
+Convolution      Conv_422                 1 1 996 997 0=1392 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=80736
+Sigmoid          Sigmoid_423              1 1 997 998
+BinaryOp         Mul_424                  2 1 998 992_splitncnn_0 999 0=2
+Convolution      Conv_425                 1 1 999 1000 0=232 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=322944
+BatchNorm        BatchNormalization_426   1 1 1000 1001 0=232
+BinaryOp         Add_427                  2 1 1001 983_splitncnn_0 1002 0=0
+Split            splitncnn_108            1 2 1002 1002_splitncnn_0 1002_splitncnn_1
+Convolution      Conv_428                 1 1 1002_splitncnn_1 1003 0=1392 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=322944
+BatchNorm        BatchNormalization_429   1 1 1003 1004 0=1392
+Split            splitncnn_109            1 2 1004 1004_splitncnn_0 1004_splitncnn_1
+Sigmoid          Sigmoid_430              1 1 1004_splitncnn_1 1005
+BinaryOp         Mul_431                  2 1 1004_splitncnn_0 1005 1006 0=2
+ConvolutionDepthWise Conv_433                 1 1 1006 1008 0=1392 1=5 11=5 2=1 12=1 3=1 13=1 4=2 14=2 15=2 16=2 5=0 6=34800 7=1392
+BatchNorm        BatchNormalization_434   1 1 1008 1009 0=1392
+Split            splitncnn_110            1 2 1009 1009_splitncnn_0 1009_splitncnn_1
+Sigmoid          Sigmoid_435              1 1 1009_splitncnn_1 1010
+BinaryOp         Mul_436                  2 1 1009_splitncnn_0 1010 1011 0=2
+Split            splitncnn_111            1 2 1011 1011_splitncnn_0 1011_splitncnn_1
+Pooling          GlobalAveragePool_437    1 1 1011_splitncnn_1 1012 0=1 4=1
+Convolution      Conv_438                 1 1 1012 1013 0=58 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=80736
+Split            splitncnn_112            1 2 1013 1013_splitncnn_0 1013_splitncnn_1
+Sigmoid          Sigmoid_439              1 1 1013_splitncnn_1 1014
+BinaryOp         Mul_440                  2 1 1013_splitncnn_0 1014 1015 0=2
+Convolution      Conv_441                 1 1 1015 1016 0=1392 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=80736
+Sigmoid          Sigmoid_442              1 1 1016 1017
+BinaryOp         Mul_443                  2 1 1017 1011_splitncnn_0 1018 0=2
+Convolution      Conv_444                 1 1 1018 1019 0=232 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=322944
+BatchNorm        BatchNormalization_445   1 1 1019 1020 0=232
+BinaryOp         Add_446                  2 1 1020 1002_splitncnn_0 1021 0=0
+Convolution      Conv_447                 1 1 1021 1022 0=1392 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=322944
+BatchNorm        BatchNormalization_448   1 1 1022 1023 0=1392
+Split            splitncnn_113            1 2 1023 1023_splitncnn_0 1023_splitncnn_1
+Sigmoid          Sigmoid_449              1 1 1023_splitncnn_1 1024
+BinaryOp         Mul_450                  2 1 1023_splitncnn_0 1024 1025 0=2
+ConvolutionDepthWise Conv_452                 1 1 1025 1027 0=1392 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=0 6=12528 7=1392
+BatchNorm        BatchNormalization_453   1 1 1027 1028 0=1392
+Split            splitncnn_114            1 2 1028 1028_splitncnn_0 1028_splitncnn_1
+Sigmoid          Sigmoid_454              1 1 1028_splitncnn_1 1029
+BinaryOp         Mul_455                  2 1 1028_splitncnn_0 1029 1030 0=2
+Split            splitncnn_115            1 2 1030 1030_splitncnn_0 1030_splitncnn_1
+Pooling          GlobalAveragePool_456    1 1 1030_splitncnn_1 1031 0=1 4=1
+Convolution      Conv_457                 1 1 1031 1032 0=58 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=80736
+Split            splitncnn_116            1 2 1032 1032_splitncnn_0 1032_splitncnn_1
+Sigmoid          Sigmoid_458              1 1 1032_splitncnn_1 1033
+BinaryOp         Mul_459                  2 1 1032_splitncnn_0 1033 1034 0=2
+Convolution      Conv_460                 1 1 1034 1035 0=1392 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=80736
+Sigmoid          Sigmoid_461              1 1 1035 1036
+BinaryOp         Mul_462                  2 1 1036 1030_splitncnn_0 1037 0=2
+Convolution      Conv_463                 1 1 1037 1038 0=384 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=534528
+BatchNorm        BatchNormalization_464   1 1 1038 1039 0=384
+Split            splitncnn_117            1 2 1039 1039_splitncnn_0 1039_splitncnn_1
+Convolution      Conv_465                 1 1 1039_splitncnn_1 1040 0=2304 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=884736
+BatchNorm        BatchNormalization_466   1 1 1040 1041 0=2304
+Split            splitncnn_118            1 2 1041 1041_splitncnn_0 1041_splitncnn_1
+Sigmoid          Sigmoid_467              1 1 1041_splitncnn_1 1042
+BinaryOp         Mul_468                  2 1 1041_splitncnn_0 1042 1043 0=2
+ConvolutionDepthWise Conv_470                 1 1 1043 1045 0=2304 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=0 6=20736 7=2304
+BatchNorm        BatchNormalization_471   1 1 1045 1046 0=2304
+Split            splitncnn_119            1 2 1046 1046_splitncnn_0 1046_splitncnn_1
+Sigmoid          Sigmoid_472              1 1 1046_splitncnn_1 1047
+BinaryOp         Mul_473                  2 1 1046_splitncnn_0 1047 1048 0=2
+Split            splitncnn_120            1 2 1048 1048_splitncnn_0 1048_splitncnn_1
+Pooling          GlobalAveragePool_474    1 1 1048_splitncnn_1 1049 0=1 4=1
+Convolution      Conv_475                 1 1 1049 1050 0=96 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=221184
+Split            splitncnn_121            1 2 1050 1050_splitncnn_0 1050_splitncnn_1
+Sigmoid          Sigmoid_476              1 1 1050_splitncnn_1 1051
+BinaryOp         Mul_477                  2 1 1050_splitncnn_0 1051 1052 0=2
+Convolution      Conv_478                 1 1 1052 1053 0=2304 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=221184
+Sigmoid          Sigmoid_479              1 1 1053 1054
+BinaryOp         Mul_480                  2 1 1054 1048_splitncnn_0 1055 0=2
+Convolution      Conv_481                 1 1 1055 1056 0=384 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=884736
+BatchNorm        BatchNormalization_482   1 1 1056 1057 0=384
+BinaryOp         Add_483                  2 1 1057 1039_splitncnn_0 1058 0=0
+Convolution      Conv_484                 1 1 1058 1059 0=1536 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=0 6=589824
+BatchNorm        BatchNormalization_485   1 1 1059 1060 0=1536
+Split            splitncnn_122            1 2 1060 1060_splitncnn_0 1060_splitncnn_1
+Sigmoid          Sigmoid_486              1 1 1060_splitncnn_1 1061
+BinaryOp         Mul_487                  2 1 1060_splitncnn_0 1061 1062 0=2
+Pooling          GlobalAveragePool_488    1 1 1062 1063 0=1 4=1
+Flatten          Flatten_489              1 1 1063 1064
+InnerProduct     Gemm_490                 1 1 1064 output 0=29 1=1 2=44544
